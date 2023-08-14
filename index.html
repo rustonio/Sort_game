@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sort The Numbers Game</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;1,300&family=Poppins:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <!-- fonts end -->
+</head>
+<body>
+    <header class="header">
+        <h1>Sort The Numbers Game</h1>
+    </header>
+
+    <main class="game_field">
+        <div class="info_container">
+            <div class="game_buttons">
+                <button class="game_button add_field_button">Add new field</button>
+                <button class="game_button remove_field_button">Remove field</button>
+                <button class="game_button start_game_button">Start the game</button>
+            </div>
+            <div class="stats">
+                <p class="score_counter">Score: 0</p>
+                <p class="wins_counter">Wins: 0</p>
+                <p class="defeats_counter">Defeats: 0</p>
+            </div>
+        </div>
+        <div class="game_list_div">
+            <ol class="game_list">
+                <li>
+                    <div class="list_element"></div>
+                </li>
+                <li>
+                    <div class="list_element"></div>
+                </li>
+                <li>
+                    <div class="list_element"></div>
+                </li>
+            </ol>
+        </div>
+        <div class="number_generator">
+
+        </div>
+    </main>
+
+    <div class="game_result">
+        <h2 class="result_text"></h2>
+    </div>
+
+    <div class="overlay hidden">
+        <div class="description hidden">
+            <p>The essence of the game: arrange the numbers in the fields in ascending order (from smallest to largest). <br>
+                Numbers can be the same.<br>
+                Add some fields for numbers (at least 3) using the "Add" button or delete them using the "Delete" button. <br>
+                When you click on the "Start the game" button, the buttons are disabled, the bet will be made (numerically equal to the number of fields). <br>
+                A number from 1 to 100 inclusive will appear in the lower window. <br>
+                Click on any unoccupied field to enter this number there. <br>
+                Repeat until you fill in all the fields. Then you will see your result. <br>
+                If you win, your points increase according to the following formula: (number of fields)^2 -> (3^2=9, 4^2=16), <br>
+                in case of defeat, the number of points will decrease by a number equal to the number of fields.</p>
+        </div>
+    </div>
+
+<script src="main.js"></script>
+</body>
+</html>
