@@ -63,7 +63,7 @@ function clearResult() {
 //disable all buttons and generate first number
 function startGame() {
     const _fields_count = document.getElementsByClassName('list_element').length;
-    if (_fields_count<3 || _fields_count>=20) return;
+    if (_fields_count<3 || _fields_count>20) return;
 
     clearResult();
 
