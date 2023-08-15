@@ -116,7 +116,7 @@ function checkWin() {
         let prevNum = parseInt(allNumbers[i].innerHTML);
         let nextNum = parseInt(allNumbers[i+1].innerHTML);
 
-        if (!(nextNum > prevNum)) {
+        if (nextNum < prevNum) {
             return false;
         }
     }
