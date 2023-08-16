@@ -165,6 +165,7 @@ function showResult() {
         //score variable changes and displays when the game is started
         defeatsCounter++;
     }
+    scoreDisplay.innerHTML = `Score: ${score}`;
     winsCounterDisplay.innerHTML = `Wins: ${winsCounter}`;
     defeatsCounterDisplay.innerHTML = `Defeats: ${defeatsCounter}`;
     endGame();
