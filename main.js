@@ -1,6 +1,7 @@
 const addFieldButton = document.querySelector('.add_field_button');
 const removeFieldButton = document.querySelector('.remove_field_button');
 const startGameButton = document.querySelector('.start_game_button');
+const endGameButton = document.querySelector('.end_game_button');
 const allButtons = document.querySelectorAll('.game_button');
 const scoreDisplay = document.querySelector('.score_counter');
 const defeatsCounterDisplay = document.querySelector('.defeats_counter');
@@ -70,8 +71,11 @@ function startGame() {
     allButtons.forEach((button) => {
         button.disabled = true;
     });
+    endGameButton.disabled = false;
 
     fields_count = document.querySelectorAll('.list_element').length;
+    score -= fields_count;
+    scoreDisplay.innerHTML = `Score: ${score}`;
 
     isGameStarted = true;
 
@@ -83,6 +87,7 @@ function endGame() {
     allButtons.forEach((button) => {
         button.disabled = false;
     });
+    endGameButton.disabled = true;
 
     isGameStarted = false;
 
@@ -111,17 +116,19 @@ function displayNewNumber() {
 function checkWin() {
     const allNumbers = document.querySelectorAll('.random_number');
 
+    if (allNumbers.length !== document.querySelectorAll('.list_element').length) return false;
+
     for (let i=0; i<allNumbers.length-1;i++) {
 
         let prevNum = parseInt(allNumbers[i].innerHTML);
         let nextNum = parseInt(allNumbers[i+1].innerHTML);
 
-        if (!(nextNum > prevNum)) {
+        if (nextNum < prevNum) {
             return false;
         }
     }
 
-    return  true;
+    return true;
 }
 
 //moves number container to the list element which was clicked
@@ -155,14 +162,14 @@ function showResult() {
         gameResultContainer.classList.add('lose');
         resultText.innerHTML = 'YOU LOSE';
 
-        score -= fields_count;
+        //score variable changes and displays when the game is started
         defeatsCounter++;
     }
-    scoreDisplay.innerHTML = `Score: ${score}`;
     winsCounterDisplay.innerHTML = `Wins: ${winsCounter}`;
     defeatsCounterDisplay.innerHTML = `Defeats: ${defeatsCounter}`;
     endGame();
 }
+endGameButton.addEventListener('click',showResult);
 
 //show/hide overlay with game description
 function toggleDescription() {

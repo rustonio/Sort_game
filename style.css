@@ -95,7 +95,7 @@ h1::after {
     border: none;
     color: white;
     background-color: #00a10a;
-    width: 30%;
+    width: 22%;
     height: 120px;
     font-size: 3rem;
     cursor: pointer;
@@ -114,6 +114,9 @@ h1::after {
 }
 .start_game_button {
     background: #14a7f1;
+}
+.end_game_button {
+    background: #3a3a3a;
 }
 .win {
     color: green;
@@ -159,12 +162,19 @@ h1::after {
     font-weight: bold;
     overflow: auto;
 }
-
-@media  (max-width: 760px) {
+@media (max-width: 1010px) {
     .game_button {
         font-size: 2rem;
         -ms-text-overflow: ellipsis;
         text-overflow: ellipsis;
+    }
+}
+@media (max-width: 650px) {
+    .game_buttons {
+        flex-wrap: wrap;
+    }
+    .game_button {
+        width: 48%;
     }
 }
 @media (max-width: 465px) {
